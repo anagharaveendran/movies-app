@@ -1,0 +1,27 @@
+.heading
+{
+    background-color: #ff9999;
+    padding:  8px;
+    text-align: center;
+    font-size: 1rem;
+}
+.flex-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.left
+{
+    width: 76%;
+    height: 100%;
+}
+.right
+{
+    width: 24%;
+}
+.rleasedMovieList:hover
+{
+    cursor: pointer;
+}
