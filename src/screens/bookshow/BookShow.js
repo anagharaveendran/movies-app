@@ -3,7 +3,7 @@ import {
  
     Link,
   } from "react-router-dom";
-  import { Typography} from '@mui/material';  
+  import {  Typography} from '@mui/material';  
 
 class  BookShow extends Component {
     
@@ -17,6 +17,7 @@ class  BookShow extends Component {
         
        </div>
             <h1>Book Show</h1>
+           
         </div>  );
     }
 }
