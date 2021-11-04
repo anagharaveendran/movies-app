@@ -17,3 +17,13 @@
     float: left;
     animation: infiniteRotate 8s linear infinite;
 }
+
+.btnDiv
+{
+    float: right;
+}
+
+.booLink
+{
+    text-decoration: none;
+}

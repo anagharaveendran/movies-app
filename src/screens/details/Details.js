@@ -1,11 +1,16 @@
 import  { Component } from 'react';
+import {
+ 
+  Link,
+} from "react-router-dom";
 
-import Header from '../../common/header/Header';
 import { ImageListItem, Typography,Rating} from '@mui/material';
 import './Details.css';
 import '../../common/moviesData'
 import moviesData from '../../common/moviesData';
 import ReactPlayer from 'react-player';
+// import { GridList } from '@material-ui/core';
+
 
 
 
@@ -14,29 +19,35 @@ class Details extends Component {
   
     render() { 
         return ( <div>
-            <Header />
-            <Typography variant="button" className="backButton">
+          
+            <div className="backButton">
+         
+            <Link to="/" className="backButtonLink"> <Typography variant="button" >
                 &lt; Back to Home
-            </Typography>
+            </Typography></Link>
+           
+          </div>
             <div className="flexContainer">
             <div className="leftDiv">
+            
             {moviesData.slice(2, 3).map((item) => (
      
-     <ImageListItem key={item.id} className="rleasedMovieList">
+    <ImageListItem key={item.id} className="rleasedMovieList">
      
-         <img style={{height:350}}
+     <Link to="/details"  >          <img style={{height:350}}
                  src={`${item.poster_url}?w=248&fit=crop&auto=format`}
                  srcSet={`${item.poster_url}?w=248&fit=crop&auto=format`}
                  alt={item.title}
                  
-               />
+               /> </Link>  
             
               
              </ImageListItem> 
              ))} 
+           
                 </div>
             <div className="midDiv">
-         
+              
             {moviesData.slice(2, 3).map((item) => (
      
      <><Typography key={item.id} variant="h2">{item.title}</Typography>
@@ -58,6 +69,15 @@ class Details extends Component {
             <Typography variant="p"><strong>Rate this movie:</strong></Typography><br></br>
             <Rating name="no-value" id="starRating" value={null} /><br></br>
             <Typography variant="p"><strong>Artists:</strong></Typography><br></br>
+          
+             {
+               moviesData.map((artist)=>{
+               return (<p>{}</p>);
+               })
+
+
+
+             }
            
            
   

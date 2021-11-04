@@ -1,25 +1,26 @@
 import  { Component } from 'react';
-import { ImageList,ImageListItem,ImageListItemBar,TextField,Box,FormControl,Button } from '@mui/material';
+import { ImageList,ImageListItem,ImageListItemBar,TextField,Box,FormControl,Button} from '@mui/material';
 
 import genres from '../../common/genre';
 import './Home.css';
-import Header from '../../common/header/Header';
+
 import '../../common/moviesData'
 import moviesData from '../../common/moviesData';
 import artists from '../../common/artists';
+import { Link } from 'react-router-dom';
 
 
 
 
 
 class Home extends Component {
-    
  
     render(props) { 
-        // let dateR = "Rlease Date:";
+ 
+     
         return (<div>
       
-            <Header />
+           
             <div className="heading">
                 <span >Upcoming Movies</span>
             </div> 
@@ -31,7 +32,7 @@ class Home extends Component {
       {moviesData.map((item) => (
      
         <ImageListItem key={item.id} style={{float:'left'}} >
-          <img style={{width: 300, height : 200}}
+         <img style={{width: 300, height : 200}}
             src={`${item.poster_url}?w=248&fit=crop&auto=format`}
             srcSet={`${item.poster_url}?w=248&fit=crop&auto=format`}
             alt={item.title}
@@ -49,30 +50,30 @@ class Home extends Component {
             <div className="flex-container">
                 <div className="left">
                 <ImageList sx={{  }} >
-      <ImageListItem key="Subheader" cols={4} >
+  <ImageListItem key="Subheader" cols={4} >
         
       </ImageListItem>
      
       {moviesData.slice(2, 6).map((item) => (
      
-<ImageListItem key={item.id} className="rleasedMovieList">
+<ImageListItem key={item.id} className="rleasedMovieList" style={{overflow:'hidden'}}>
 
-    <img style={{height:350}}
+<Link to="/details"><img style={{height:350}}
             src={`${item.poster_url}?w=248&fit=crop&auto=format`}
             srcSet={`${item.poster_url}?w=248&fit=crop&auto=format`}
-            alt={item.title}
+            alt={item.title} 
             
-          />
+          /></Link>
        
           <ImageListItemBar
             title={item.title}
             subtitle={item.release_date}
            
           />
-        </ImageListItem> 
+        </ImageListItem>
      
         
-         ))}  
+         ))}   
     </ImageList>
 
       
