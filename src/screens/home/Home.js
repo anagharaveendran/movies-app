@@ -1,9 +1,7 @@
 import  { Component } from 'react';
 import { ImageList,ImageListItem,ImageListItemBar,TextField,Box,FormControl,Button} from '@mui/material';
-
 import genres from '../../common/genre';
 import './Home.css';
-
 import '../../common/moviesData'
 import moviesData from '../../common/moviesData';
 import artists from '../../common/artists';
@@ -26,11 +24,11 @@ class Home extends Component {
             </div> 
             <div className="imageList">
             <ImageList sx={{  overflowX:'visible', overflowY: 'hidden', height: 220, whiteSpace: 'wrap', marginTop:0}} >
-      <ImageListItem key="Subheader" cols={6}>
+            <ImageListItem key="Subheader" cols={6}>
         
-      </ImageListItem>
-      {moviesData.map((item) => (
-     
+            </ImageListItem>
+          {moviesData.map((item) => (
+        
         <ImageListItem key={item.id} style={{float:'left'}} >
          <img style={{width: 300, height : 200}}
             src={`${item.poster_url}?w=248&fit=crop&auto=format`}
@@ -45,25 +43,25 @@ class Home extends Component {
         </ImageListItem> 
         
          ))} 
-    </ImageList>
+        </ImageList>
             </div> 
             <div className="flex-container">
                 <div className="left">
                 <ImageList sx={{  }} >
-  <ImageListItem key="Subheader" cols={4} >
+         <ImageListItem key="Subheader" cols={4} >
         
       </ImageListItem>
      
       {moviesData.slice(2, 6).map((item) => (
      
-<ImageListItem key={item.id} className="rleasedMovieList" style={{overflow:'hidden'}}>
+        <ImageListItem key={item.id} className="rleasedMovieList" style={{overflow:'hidden'}}>
 
-<Link to="/details"><img style={{height:350}}
-            src={`${item.poster_url}?w=248&fit=crop&auto=format`}
-            srcSet={`${item.poster_url}?w=248&fit=crop&auto=format`}
-            alt={item.title} 
+              <Link to="/details"><img style={{height:350}}
+                   src={`${item.poster_url}?w=248&fit=crop&auto=format`}
+                     srcSet={`${item.poster_url}?w=248&fit=crop&auto=format`}
+                         alt={item.title} 
             
-          /></Link>
+                    /></Link>
        
           <ImageListItemBar
             title={item.title}

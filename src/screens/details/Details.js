@@ -1,19 +1,11 @@
 import  { Component } from 'react';
-import {
- 
-  Link,
-} from "react-router-dom";
-
+import {Link,} from "react-router-dom";
 import { ImageListItem, Typography,Rating} from '@mui/material';
 import './Details.css';
 import '../../common/moviesData'
 import moviesData from '../../common/moviesData';
 import ReactPlayer from 'react-player';
-// import { GridList } from '@material-ui/core';
-
-
-
-
+import { GridList } from '@material-ui/core';
 
 class Details extends Component {
   
@@ -70,14 +62,10 @@ class Details extends Component {
             <Rating name="no-value" id="starRating" value={null} /><br></br>
             <Typography variant="p"><strong>Artists:</strong></Typography><br></br>
           
-             {
-               moviesData.map((artist)=>{
-               return (<p>{}</p>);
-               })
-
-
-
-             }
+            <GridList cols={2}>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Marlon_Brando_%28cropped%29.jpg" alt="actr1"/>
+              
+            </GridList>
            
            
   

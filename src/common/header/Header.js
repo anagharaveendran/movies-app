@@ -4,8 +4,6 @@ import { Component } from 'react';
 import BookShow from '../../screens/bookshow/BookShow';
 import Details from '../../screens/details/Details';
 import Home from '../../screens/home/Home';
-
-
 import './Header.css';
 import ReactLogo from './logo.svg';
 
